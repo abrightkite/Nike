@@ -1,0 +1,250 @@
+@charset "utf-8";
+@font-face {
+  font-family: "Nike TG";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/257c802f-349c-4b4d-aefa-546d5de15ec6.eot");
+  src: url("https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/257c802f-349c-4b4d-aefa-546d5de15ec6.woff")
+      format("woff"),
+    url("https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/257c802f-349c-4b4d-aefa-546d5de15ec6.ttf")
+      format("truetype"),
+    url("https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/257c802f-349c-4b4d-aefa-546d5de15ec6.svg#257c802f-349c-4b4d-aefa-546d5de15ec6")
+      format("svg");
+}
+body,
+html {
+  width: 100%;
+}
+/* 스타일 초기화 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 100%; /* pc는 기본 font size가 16px 모바일는 12px */
+  font-family: "Nike TG", "Noto Sans KR", Helvetica, sans-serif !important;
+  font-weight: normal; /* 400 */
+  letter-spacing: -0.1px !important;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+button {
+  background-color: inherit;
+  border: none;
+  display: inline-block;
+}
+input {
+  border: none;
+  background-color: inherit;
+}
+input:focus {
+  outline: none;
+}
+
+/* common */
+
+.round-button {
+  font-size: 16px;
+  height: 40px;
+  padding: 0 28px;
+  border-radius: 20px; /* width 50% */
+}
+.round-black-button {
+  background-color: #000;
+  color: #fff;
+}
+.round-white-button {
+  background-color: #fff;
+  color: #000;
+}
+
+/* header-top */
+header .header-top {
+  width: 100%;
+  height: 36px;
+  background-color: #f5f5f5;
+}
+.header-inner {
+  width: 100%;
+  padding: 0 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top .header-inner {
+  height: 36px;
+}
+.brand-container .brand {
+  display: flex;
+}
+.brand-container .brand li {
+  padding: 0 12px;
+}
+.members-container .members {
+  display: flex;
+  color: #111;
+  font-size: 14px;
+}
+.members-container .members li {
+  padding: 0 10px;
+  position: relative;
+  /*
+  relative 는
+  혼자 쓰이면 해당 요소(=자기 자신)의 위치를 기준으로 얼마나 떨어져 있는지 지정하게 하는 속성
+  자식 요소의 위치를 지정할 때 부모요소라고 선언하는 역할이 되기도 한다. -> 현재 적용한 속성의 의미
+  */
+}
+.members li:nth-child(2)::before,
+.members li:nth-child(3)::before {
+  content: "";
+  height: 10px;
+  width: 1px;
+  background-color: #111;
+  position: absolute;
+  left: 0;
+  top: 50%; /*부모요소의 높이를 기준으로 50%*/
+  transform: translateY(-50%); /*해당 요소를 기준으로 50%*/
+}
+
+.header-content .header-inner {
+  height: 60px;
+}
+.header-content nav .gnb {
+  display: flex;
+  height: 60px;
+}
+.header-content nav .gnb li {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 12px;
+}
+.header-content nav .gnb li .depth2 {
+  display: none;
+}
+.users-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.users-container .search-bar {
+  width: 180px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+.users-container .search-bar:hover {
+  background-color: #e5e5e5;
+}
+.users-container .search-bar input {
+  padding-left: 12px;
+  width: 100%;
+}
+
+.users-container .user-right {
+  display: flex;
+  margin-left: 16px;
+}
+.user-right li {
+  padding: 6px 8px;
+  border-radius: 50%;
+  /* 50% height width 무엇을 기준으로? -> width를 기준으로*/
+}
+.user-right li:hover {
+  background-color: #e5e5e5;
+}
+
+/* section */
+.section-wrap {
+  max-width: 1792px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+section {
+  width: 100%;
+  padding-bottom: 100px;
+}
+.media-area video,
+.media-area img {
+  width: 100%;
+}
+.media-area b {
+  display: block;
+  font-size: 23px;
+  margin-bottom: 16px;
+}
+.content-area {
+  text-align: center;
+}
+.content-area span {
+  font-weight: lighter;
+  font-size: 16px;
+  display: block;
+  padding-top: 20px;
+}
+.content-area h2 {
+  font-size: 43px;
+  font-weight: 700;
+  padding: 12px 0;
+}
+.content-area p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.button-container {
+  margin-top: 20px;
+}
+.button-container > button:nth-child(2) {
+  margin-left: 2px;
+}
+/* nth-child , nth-of-type 의 차이점
+nth-child : 자식요소의 순서
+nth-of-type : 자식 요소 중 button의 순서
+*/
+
+section.sales h2 {
+  font-size: 23px;
+  margin-bottom: 16px;
+}
+.products-area {
+  display: flex;
+  justify-content: space-between;
+}
+.products-area .item {
+  width: 50%;
+  padding: 0 8px;
+  height: 700px;
+}
+.item .item-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.trend .item:first-child .item-content {
+  background-image: url(./images/220701_hp_p4_17.jpeg);
+}
+.trend .item:last-child .item-content {
+  background-image: url(./images/220701_hp_p4_19.jpeg);
+}
+.item-content .item-text {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+.item-content h3 {
+  margin-bottom: 20px;
+}
